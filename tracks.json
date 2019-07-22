@@ -1,0 +1,12 @@
+[
+  {
+    "id": "0",
+    "title": "Higher lies",
+    "cover_url": "./images/cover/paraphine_higher_hies.json"
+  },
+  {
+    "id": "1",
+    "title": "Say it out loud",
+    "cover_url": "./images/cover/paraphine_say_it_out_loud.json"
+  }
+]

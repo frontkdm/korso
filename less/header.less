@@ -1,0 +1,82 @@
+/***********************************/
+
+/* HEADER STYLES */
+
+/***********************************/
+.page-header {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  padding: 25px 0;
+  z-index: 2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -205%;
+    right: -100px;
+    display: block;
+    width: 545px;
+    height: 460px;
+    background-image: url(../images/shapes/shape_header.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+  }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: inherit;
+}
+
+.header-menu {
+  display: block;
+  width: 35px;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::after {
+    transform: scaleX(0.85);
+  }
+
+  &::before,
+  &::after,
+  span {
+    display: block;
+    height: 2px;
+    background-color: @color-dark;
+    transform-origin: left;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  span {
+    transform: scaleX(0.7);
+    margin: 6px 0;
+  }
+}
+
+.header-menu:hover {
+  &::after,
+  span {
+    transform: scaleX(1);
+  }
+}
