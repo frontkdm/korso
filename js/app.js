@@ -3,6 +3,7 @@ function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToA
 })();
 
 (function () {
+
   if ($('.slide').length > 1) {
     $('.slider-controls').css({ display: 'flex' });
     var topSlider = $('.top-slider').slick({
@@ -37,8 +38,57 @@ function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToA
     slick("slick".concat(target));
   });
 
+  var body = $('body');
+  var drawer = $('.drawer');
+  $('.header-menu').click(function () {
+    body.addClass('noflow');
+    drawer.addClass('open');
+  });
 
+  var closeDrawer = $('.drawer-close');
+  closeDrawer.click(function () {
+    body.removeClass('noflow');
+    drawer.removeClass('open');
+  });
 
+  $(document).on('click', 'a[href^="#"]', function (e) {
+    var id = $(this).attr('href');
+    var $id = $(id);
+    if ($id.length === 0) {
+      return;
+    }
+    var pos = $id.offset().top;
+
+    e.preventDefault();
+
+    body.removeClass('noflow');
+    drawer.removeClass('open');
+    $('body, html').animate({ scrollTop: pos }, 1500);
+  });
+
+  $(document).keyup(function (e) {
+    if (e.key === 'Escape') {
+      $(this).removeClass('noflow');
+      $('.modal-wrapper').removeClass('show');
+      $('.modal').removeClass('show');
+      $('.modal-form').trigger('reset');
+    }
+  });
+
+  var timer;
+  function detectScroll(e) {
+    clearTimeout(timer);
+    if (!$('body').has('disable-hover')) {
+      $('body').addClass('disable-hover');
+    }
+
+    timer = setTimeout(function () {
+      $('body').removeClass('disable-hover');
+    }, 200);
+
+  }
+
+  $(window).scroll(detectScroll);
 
   console.log('The main script is ready');
 })();
