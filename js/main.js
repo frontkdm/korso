@@ -18,6 +18,13 @@
     slidesToScroll: 1
   });
 
+  const mainSlider = $('.video-slider').slick({
+    dots: false,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  })
+
   $('.slider-controls').click(function (e) {
     const target = e.target.dataset.move;
     $(this)
@@ -25,6 +32,7 @@
       .children('.page-slider')
       .slick(`slick${target}`);
   });
+
 
 
 

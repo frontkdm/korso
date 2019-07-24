@@ -16,10 +16,28 @@
       audio_src: "./tracks/Paraphine - Say It Out Loud.mp3"
     }
   ]
+
+  
+
   const audio = new Audio();
   const context = new AudioContext();
   const src = context.createMediaElementSource(audio);
   const analyser = context.createAnalyser();
+
+  $('.player-controls').on('click', function (e) {
+    const control = e.target.dataset.control;
+    switch (control) {
+      case 'play':
+        audioPlay();
+        break;
+      case 'stop':
+        audioStop();
+        break;
+      case 'pause':
+        audioPause();
+        break;
+    }
+  })
 
   $('.track-controls').click(function (e) {
     const trackId = parseInt(e.target.dataset.track)
@@ -79,7 +97,6 @@
       if (shiftX > rectWidth || shiftX <= 0) { return }
 
       setPlayerHand(handPosition);
-      console.log(shiftX)
     }
 
     const onMouseUp = function () {
@@ -143,20 +160,7 @@
 
   }
 
-  $('.player-controls').on('click', function (e) {
-    const control = e.target.dataset.control;
-    switch (control) {
-      case 'play':
-        audioPlay();
-        break;
-      case 'stop':
-        audioStop();
-        break;
-      case 'pause':
-        audioPause();
-        break;
-    }
-  })
+  
 
   const audioPlay = () => {
     audio.play();

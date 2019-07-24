@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: darken(@color-primary, 5%);
+  background: darken(@color-primary, 2%);
 }
 ::-webkit-scrollbar-track {
   background: @color-light;
@@ -25,13 +25,30 @@ h5 {
   margin-top: 0;
 }
 
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 48px;
+}
+
 p {
   margin-top: 0;
   line-height: 33px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .pt-0 {
   padding-top: 0 !important;
+}
+
+.pt-300 {
+  padding-top: 300px !important;
 }
 
 .pb-0 {
@@ -57,6 +74,12 @@ p {
 .mb-60 {
   margin-bottom: 60px !important;
 }
+
+
+.mb-350-negative {
+  margin-bottom: -350px;
+}
+
 
 .mt-350-negative {
   margin-top: -350px;
@@ -160,7 +183,12 @@ p {
 
   &-edged {
     display: inline-flex;
+    align-items: stretch;
     text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
     span {
       display: inline-flex;
       justify-content: center;
@@ -185,6 +213,11 @@ p {
     }
 
 
+  }
+
+
+  &-green {
+    background-color: @color-secondary;
   }
 
 }
@@ -241,6 +274,10 @@ p {
   justify-content: space-between;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .centered {
   position: relative;
   left: 50%;
@@ -253,4 +290,16 @@ p {
 
 .text-center {
   text-align: center;
+}
+
+.endge-up {
+  transform: translateY(-50%);
+}
+
+.w-60 {
+  max-width: 60%;
+}
+
+.z-2 {
+  z-index: 2;
 }

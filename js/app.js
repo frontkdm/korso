@@ -1,34 +1,42 @@
-(function() {
-  console.log('Lazyload is ready')
+function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}(function () {
+  console.log('Lazyload is ready');
 })();
 
 (function () {
   if ($('.slide').length > 1) {
     $('.slider-controls').css({ display: 'flex' });
-    const topSlider = $('.top-slider').slick({
+    var topSlider = $('.top-slider').slick({
       arrows: false,
       dots: false,
       slidesToScroll: 1,
       slidesToShow: 1,
       fade: true,
-      lazyLoad: 'ondemand'
-    });
+      lazyLoad: 'ondemand' });
+
   }
 
-  const rowSlider = $('.row-slider').slick({
+  var rowSlider = $('.row-slider').slick({
     arrows: false,
     dots: false,
     slidesToShow: 3,
-    slidesToScroll: 1
-  });
+    slidesToScroll: 1 });
+
+
+  var mainSlider = $('.video-slider').slick({
+    dots: false,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1 });
+
 
   $('.slider-controls').click(function (e) {
-    const target = e.target.dataset.move;
-    $(this)
-      .parent()
-      .children('.page-slider')
-      .slick(`slick${target}`);
+    var target = e.target.dataset.move;
+    $(this).
+    parent().
+    children('.page-slider').
+    slick("slick".concat(target));
   });
+
 
 
 
@@ -39,40 +47,58 @@
 (function () {
 
   // Аудио проигрыватель
-  const playerRange = $('.player-range');
-  const tracks = [
-    {
-      id: 0,
-      title: "Higher lies",
-      cover_url: "./images/covers/paraphine_higher_hies.jpg",
-      audio_src: "./tracks/Paraphine - Good Times.mp3"
-    },
-    {
-      id: 1,
-      title: "Say it out loud",
-      cover_url: "./images/covers/paraphine_say_it_out_loud.jpg",
-      audio_src: "./tracks/Paraphine - Say It Out Loud.mp3"
-    }
-  ]
-  const audio = new Audio();
-  const context = new AudioContext();
-  const src = context.createMediaElementSource(audio);
-  const analyser = context.createAnalyser();
+  var playerRange = $('.player-range');
+  var tracks = [
+  {
+    id: 0,
+    title: "Higher lies",
+    cover_url: "./images/covers/paraphine_higher_hies.jpg",
+    audio_src: "./tracks/Paraphine - Good Times.mp3" },
+
+  {
+    id: 1,
+    title: "Say it out loud",
+    cover_url: "./images/covers/paraphine_say_it_out_loud.jpg",
+    audio_src: "./tracks/Paraphine - Say It Out Loud.mp3" }];
+
+
+
+
+
+  var audio = new Audio();
+  var context = new AudioContext();
+  var src = context.createMediaElementSource(audio);
+  var analyser = context.createAnalyser();
+
+  $('.player-controls').on('click', function (e) {
+    var control = e.target.dataset.control;
+    switch (control) {
+      case 'play':
+        audioPlay();
+        break;
+      case 'stop':
+        audioStop();
+        break;
+      case 'pause':
+        audioPause();
+        break;}
+
+  });
 
   $('.track-controls').click(function (e) {
-    const trackId = parseInt(e.target.dataset.track)
+    var trackId = parseInt(e.target.dataset.track);
     if (trackId >= 0) {
-      const trackInfo = tracks.filter(track => track.id === trackId)
+      var trackInfo = tracks.filter(function (track) {return track.id === trackId;});
 
       if (trackInfo.length) {
-        setTrackInfo(...trackInfo)
+        setTrackInfo.apply(void 0, _toConsumableArray(trackInfo));
         $('#player').addClass('active');
       }
 
     }
-  })
+  });
 
-  function setTrackInfo({ title, cover_url, audio_src }) {
+  function setTrackInfo(_ref) {var title = _ref.title,cover_url = _ref.cover_url,audio_src = _ref.audio_src;
     $('.player-image img').attr('src', cover_url);
     $('.player-info p').text(title);
     audio.src = audio_src;
@@ -88,79 +114,78 @@
 
 
 
-  const canvas = $('#player-visual')[0];
+  var canvas = $('#player-visual')[0];
   canvas.width = window.innerWidth;
   canvas.height = $('#player').height();
-  const ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext('2d');
 
   src.connect(analyser);
   analyser.connect(context.destination);
   analyser.fftSize = 256;
 
-  const bufferLength = analyser.frequencyBinCount;
-  let dataArray = new Uint8Array(bufferLength);
+  var bufferLength = analyser.frequencyBinCount;
+  var dataArray = new Uint8Array(bufferLength);
 
-  const width = canvas.width;
-  const height = canvas.height;
-  const barWidth = (width / bufferLength) * 2;
-  let barHeight = 0;
+  var width = canvas.width;
+  var height = canvas.height;
+  var barWidth = width / bufferLength * 2;
+  var barHeight = 0;
 
   // Инициализация драг и клик евентов ползунка плеера
   playerRange.on('mousedown', function (e) {
     e.preventDefault();
-    let rectWidth = e.target.getBoundingClientRect().width;
+    var rectWidth = e.target.getBoundingClientRect().width;
 
-    const onMouseMove = function () {
-      let shiftX = event.clientX - playerRange[0].getBoundingClientRect().left;
-      let handPosition = parseInt((shiftX / rectWidth) * 100);
+    var onMouseMove = function onMouseMove() {
+      var shiftX = event.clientX - playerRange[0].getBoundingClientRect().left;
+      var handPosition = parseInt(shiftX / rectWidth * 100);
 
-      if (shiftX > rectWidth || shiftX <= 0) { return }
+      if (shiftX > rectWidth || shiftX <= 0) {return;}
 
       setPlayerHand(handPosition);
-      console.log(shiftX)
-    }
+    };
 
-    const onMouseUp = function () {
+    var onMouseUp = function onMouseUp() {
       document.removeEventListener('mouseup', onMouseUp);
       document.removeEventListener('mousemove', onMouseMove);
-    }
+    };
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
 
-  })
+  });
 
   playerRange.on('click', function (e) {
-    let rectWidth = e.target.getBoundingClientRect().width;
-    let shiftX = event.clientX - playerRange[0].getBoundingClientRect().left;
-    let handPosition = parseInt((shiftX / rectWidth) * 100);
+    var rectWidth = e.target.getBoundingClientRect().width;
+    var shiftX = event.clientX - playerRange[0].getBoundingClientRect().left;
+    var handPosition = parseInt(shiftX / rectWidth * 100);
 
-    if (shiftX > rectWidth || shiftX < 0) { return }
+    if (shiftX > rectWidth || shiftX < 0) {return;}
 
     setPlayerHand(handPosition);
-  })
+  });
 
-  playerRange.on('dragstart', function () { return false; });
+  playerRange.on('dragstart', function () {return false;});
 
-  const setPlayerHand = function (handPosition) {
+  var setPlayerHand = function setPlayerHand(handPosition) {
 
-    audio.currentTime = (handPosition * audio.duration) / 100
-    $('.range-handle').css({ transform: `translateX(${-100 + handPosition}%)` });
+    audio.currentTime = handPosition * audio.duration / 100;
+    $('.range-handle').css({ transform: "translateX(".concat(-100 + handPosition, "%)") });
 
 
   };
 
   function render() {
     requestAnimationFrame(render);
-    const currentTime = parseInt(audio.currentTime);
-    const currentTime2 = parseInt(currentTime / Math.floor(audio.duration) * 100);
+    var currentTime = parseInt(audio.currentTime);
+    var currentTime2 = parseInt(currentTime / Math.floor(audio.duration) * 100);
     barCount = 0;
 
-    if (!currentTime2) return
-    $('.range-handle').css({ transform: `translateX(${-100 + currentTime2}%)` });
+    if (!currentTime2) return;
+    $('.range-handle').css({ transform: "translateX(".concat(-100 + currentTime2, "%)") });
 
     analyser.getByteFrequencyData(dataArray);
-    ctx.fillStyle = '#000'
+    ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, width, height);
 
     for (var i = 0; i < bufferLength; i++) {
@@ -181,37 +206,24 @@
 
   }
 
-  $('.player-controls').on('click', function (e) {
-    const control = e.target.dataset.control;
-    switch (control) {
-      case 'play':
-        audioPlay();
-        break;
-      case 'stop':
-        audioStop();
-        break;
-      case 'pause':
-        audioPause();
-        break;
-    }
-  })
 
-  const audioPlay = () => {
+
+  var audioPlay = function audioPlay() {
     audio.play();
   };
 
-  const audioStop = () => {
+  var audioStop = function audioStop() {
     audio.pause();
     audio.currentTime = 0;
-    $('.range-handle').css({ transform: `translateX(${-100 + 0}%)` });
+    $('.range-handle').css({ transform: "translateX(".concat(-100 + 0, "%)") });
     $('#player').removeClass('active');
-  }
+  };
 
-  const audioPause = () => {
+  var audioPause = function audioPause() {
     audio.pause();
   };
 
   render();
 
   console.log('Init player');
-})()
+})();
