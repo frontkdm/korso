@@ -1,0 +1,168 @@
+/***********************************/
+ 
+/* MEDIA QUERIES */
+
+/***********************************/
+section:not(:nth-child(7)) {
+    display: none;
+}
+
+footer {
+    display: none;
+}
+
+.page-header::after {
+    display: none;
+}
+
+@media screen and (max-width: 1670px) {
+    .btn-row-controls {
+        &[data-move='Prev'] {
+            background-color: rgba(255, 255, 255, .5);
+            transform: translateX(0);
+        }
+        &[data-move='Next'] {
+            background-color: rgba(255, 255, 255, .5);
+            transform: translateX(0);
+        }
+        }
+}
+
+@media screen and (max-width: 1120px) {
+    .top-section {
+        h1 {
+            padding: 0 15px;
+        }
+    }
+    .slide {
+        &-text {
+            padding: 0 15px;
+        }
+    }
+    .top-socials {
+        position: static;
+        padding: 0 15px;
+        writing-mode: horizontal-tb;
+    }
+
+    .video {
+        min-height: 480px;
+    }
+
+    .card-image {
+        min-height: 320px;
+        height: 320px;
+    }
+
+     .video-slider .slide {
+        min-height: auto;
+    }
+
+}
+
+@media screen and (max-width: 840px) {
+    .page-header::after {
+        right: -5%;
+        width: 420px;
+    }
+
+    .top-section {
+        align-items: center;
+        padding: 0;
+         h1 {
+            position: static;
+            margin-bottom: 30px;
+            padding: 0;
+            color: inherit;
+        }
+        .section-inner {
+            margin: 0;
+        }
+    }
+    .top-socials {
+        display: none;
+    }
+    .slide {
+        &-text {
+            padding: 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+            h2 {
+                font-size: 64px;
+            }
+        }
+        &-image {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .drawer-inner {
+        max-width: 280px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+   
+}
+
+@media screen and (max-width: 580px) {
+    .page-header::after {
+        right: -25vw;
+        width: 320px;
+    }
+
+    .top-section::before {
+        left: -140%;
+    }
+
+    .video {
+        min-height: 320px;
+    }
+
+    .btn {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .btn-edged {
+        &-left {
+            padding: 15px;
+        }
+        
+        &-right {
+            padding: 15px 25px;
+        }
+    }
+
+    .card-event {
+        &-image {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        &-body {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}

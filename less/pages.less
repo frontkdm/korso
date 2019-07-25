@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
 
   h1 {
     position: absolute;
@@ -35,6 +35,11 @@
     background-repeat: no-repeat;
     z-index: -1;
   }
+
+  .section-inner {
+    margin: 0 -15px;
+  }
+
 }
 
 .top-socials {
@@ -67,8 +72,9 @@
   }
 
   &-text {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 540px;
+    max-width: 540px;
+    flex-shrink: 0;
 
     h2 {
       align-items: flex-end;
@@ -88,9 +94,9 @@
   }
 
   &-image {
-    flex: 0 0 55%;
-    max-width: 55%;
-    transform: translateX(5%);
+    flex: 0 0 830px;
+    max-width: 830px;
+    // transform: translateX(5%);
   }
 
   picture {

@@ -20,7 +20,21 @@ function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToA
     arrows: false,
     dots: false,
     slidesToShow: 3,
-    slidesToScroll: 1 });
+    slidesToScroll: 1,
+    responsive: [
+    {
+      breakpoint: 840,
+      settings: {
+        slidesToShow: 2 } },
+
+
+    {
+      breakpoint: 580,
+      settings: {
+        slidesToShow: 1 } }] });
+
+
+
 
 
   var mainSlider = $('.video-slider').slick({
