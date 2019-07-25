@@ -1,8 +1,11 @@
 @@include('./chunks/head_meta.html')
 <div id="webpage">
+  @@include('./chunks/modal.html')
+  @@include('./chunks/drawer.html')
+
+
   @@include('./chunks/header.html')
 
-  @@include('./chunks/drawer.html')
 
   <main class="page-main">
 
@@ -204,9 +207,9 @@
           </div>
           <div class="video-holder">
             <div class="video">
-              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+              <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
+              </iframe> -->
             </div>
 
             <a href="#" class="btn-edged centered">
@@ -394,27 +397,27 @@
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
@@ -734,7 +737,7 @@
                     вокального продюсера, чья работа позволяет добиваться максимального качества исполнения
                     от&nbsp;вокалиста
                   </p>
-                  <button class="btn-edged edge-down">
+                  <button class="btn-edged edge-down btn-modal" data-modal-type="studio">
                     <span class="btn-edged-left">Подать заявку</span>
                     <span class="btn-edged-right"></span>
                   </button>
@@ -758,7 +761,7 @@
                     подготовиться
                     к&nbsp;съемкам музыкального клипа? Я&nbsp;помогу вам справиться и&nbsp;с&nbsp;этими задачами!
                   </p>
-                  <button class="btn-edged edge-down">
+                  <button class="btn-edged edge-down btn-modal" data-modal-type="producer">
                     <span class="btn-edged-left">Подать заявку</span>
                     <span class="btn-edged-right"></span>
                   </button>
@@ -787,9 +790,9 @@
           </p>
           <div class="video-holder">
             <div class="video">
-              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+              <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
+              </iframe> -->
             </div>
 
             <a href="#" class="btn-edged centered">
@@ -859,16 +862,14 @@
           </div>
 
         </div>
-        <button class="btn-edged centered edge-down" style="top: 50px;">
+        <a href="#" class="btn-edged centered edge-down" style="top: 50px;">
           <span class="btn-edged-left">Получить портфолио</span>
           <span class="btn-edged-right"></span>
-        </button>
+        </a>
       </div>
     </section>
 
   </main>
-
-
 
   @@include('./chunks/footer.html')
 </div>

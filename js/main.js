@@ -78,9 +78,9 @@
 
   $(document).keyup(function (e) {
     if (e.key === 'Escape') {
-      $(this).removeClass('noflow');
-      $('.modal-wrapper').removeClass('show');
-      $('.modal').removeClass('show')
+      body.removeClass('noflow');
+      $('.modal').removeClass('show');
+      // $('.modal').removeClass('show')
       $('.modal-form').trigger('reset');
     }
   })
@@ -99,6 +99,22 @@
   }
 
   $(window).scroll(detectScroll);
+
+  $(document).click(function (e) {
+    const target = e.target.classList[0];
+    if (target === 'modal') {
+      body.removeClass('noflow');
+      $('.modal').removeClass('show')
+    }
+  })
+
+  $('.btn-modal').click(function (e) {
+    const formType = $(this).data('modal-type');
+    body.addClass('noflow')
+    $('.modal').addClass('show');
+
+    console.log(formType)
+  })
 
   console.log('The main script is ready');
 })();

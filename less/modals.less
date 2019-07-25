@@ -1,0 +1,59 @@
+/***********************************/
+ 
+/* MODALS STYLES */
+
+/***********************************/
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 50;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out,
+                visibility .2s ease-in-out;
+
+    &-inner {
+        width: 1015px;
+        margin: 250px auto;
+        padding: 30px 60px 60px;
+        background-color: #fff;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
+
+.modal-inner {
+    h3 {
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 48px;
+    }
+}
+
+.modal-form {
+    max-width: 80%;
+    margin: 0 auto;
+
+    .form-group {
+        margin-top: 30px;
+    }
+
+    .privacy {
+        display: block;
+        margin: -20px 0;
+        padding: 0 15px;
+    }
+
+}

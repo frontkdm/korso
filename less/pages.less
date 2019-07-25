@@ -299,9 +299,11 @@
 
 .player-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   transform: translateY(130%);
   transition: transform .2s ease-in-out;
+
 }
 
 .player-image {
@@ -316,7 +318,7 @@
 }
 
 .player-info {
-  min-width: 20ch;
+  min-width: 15ch;
   margin-right: 30px;
   h5 {
     margin-bottom: 5px;
@@ -332,7 +334,7 @@
 
 .player-range {
   position: relative;
-  width: 800px;
+  width: 55%;
   height: 3px;
   background-color: @color-light;
   overflow: hidden;

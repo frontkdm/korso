@@ -85,6 +85,7 @@ img {
   margin-bottom: 60px !important;
 }
 
+
 .m-15-negarive {
   margin: 0 -15px;
 }
@@ -163,9 +164,11 @@ img {
 }
 
 #webpage {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .page-main {
@@ -358,4 +361,16 @@ img {
 
 .z-2 {
   z-index: 2;
+}
+
+.form-group {
+  position: relative;
+  input {
+    width: 100%;
+    padding: 16px 30px;
+  }
+}
+
+.privacy {
+  font-size: 12px;
 }

@@ -14,22 +14,29 @@
   <title>Lena Korso</title>
 </head>
 
-<body></body>
-
-</html>
+<body>
 <div id="webpage">
-  <header class="page-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="#webpage" class="header-logo">Lena Korso</a>
-      <button class="header-menu">
-        <span></span>
-      </button>
+  <div class="modal">
+    <div class="modal-inner">
+        <h3>Оставить заявку на&nbsp; обучение</h3>
+        <form class="modal-form">
+            <div class="form-group"><input placeholder="Имя" type="text" required></div>
+            <div class="form-group"><input placeholder="Телефон" type="tel" required></div>
+            <div class="form-group"><input placeholder="Эл. почта" type="email" required></div>
+            <div class="form-group">
+                <span class="privacy">Отправляя форму, вы соглашатесь на обработку персональных
+                    данных
+                </span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-edged centered mt-60" style="margin-top: 30px">
+                    <span class="btn-edged-left">Отправить</span>
+                    <span class="btn-edged-right"></span>
+                </button>
+            </div>
+        </form>
     </div>
-  </div>
-</header>
-
-
+</div>
   <div class="drawer">
     <div class="drawer-inner">
         <h5>Lena Korso</h5>
@@ -42,6 +49,20 @@
     </div>
     <button class="drawer-close"></button>
 </div>
+
+
+  <header class="page-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#webpage" class="header-logo">Lena Korso</a>
+      <button class="header-menu">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
 
   <main class="page-main">
 
@@ -243,9 +264,9 @@
           </div>
           <div class="video-holder">
             <div class="video">
-              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+              <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
+              </iframe> -->
             </div>
 
             <a href="#" class="btn-edged centered">
@@ -433,27 +454,27 @@
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
             <div class="slide">
               <div class="video-holder">
                 <div class="video">
-                  <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+                  <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+                  </iframe> -->
                 </div>
               </div>
             </div>
@@ -773,7 +794,7 @@
                     вокального продюсера, чья работа позволяет добиваться максимального качества исполнения
                     от&nbsp;вокалиста
                   </p>
-                  <button class="btn-edged edge-down">
+                  <button class="btn-edged edge-down btn-modal" data-modal-type="studio">
                     <span class="btn-edged-left">Подать заявку</span>
                     <span class="btn-edged-right"></span>
                   </button>
@@ -797,7 +818,7 @@
                     подготовиться
                     к&nbsp;съемкам музыкального клипа? Я&nbsp;помогу вам справиться и&nbsp;с&nbsp;этими задачами!
                   </p>
-                  <button class="btn-edged edge-down">
+                  <button class="btn-edged edge-down btn-modal" data-modal-type="producer">
                     <span class="btn-edged-left">Подать заявку</span>
                     <span class="btn-edged-right"></span>
                   </button>
@@ -826,9 +847,9 @@
           </p>
           <div class="video-holder">
             <div class="video">
-              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
+              <!-- <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-              </iframe>
+              </iframe> -->
             </div>
 
             <a href="#" class="btn-edged centered">
@@ -898,16 +919,14 @@
           </div>
 
         </div>
-        <button class="btn-edged centered edge-down" style="top: 50px;">
+        <a href="#" class="btn-edged centered edge-down" style="top: 50px;">
           <span class="btn-edged-left">Получить портфолио</span>
           <span class="btn-edged-right"></span>
-        </button>
+        </a>
       </div>
     </section>
 
   </main>
-
-
 
   <footer class="page-footer" style="background-color: #F4F4F4;">
     <div class="container">
